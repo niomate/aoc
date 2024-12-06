@@ -1,6 +1,7 @@
 import sys
 import importlib
-from aoc.core.challenge import get_challenge_path, fetch_challenge_input, create_new_challenge
+from .challenge import get_challenge_path, fetch_challenge_input, create_new_challenge
+import argparse
 
 
 def get_solutions(day, year, part=None):
@@ -20,7 +21,7 @@ def get_solutions(day, year, part=None):
         solution2(input)
 
 
-if __name__ == "__main__":
+def main():
     action = sys.argv[1]
     year = int(sys.argv[2])
     day = int(sys.argv[3])
@@ -28,3 +29,5 @@ if __name__ == "__main__":
         get_solutions(day, year)
     if action == "create":
         create_new_challenge(day, year)
+    if action == "submit":
+        raise NotImplementedError("Submission is not implemented yet")
