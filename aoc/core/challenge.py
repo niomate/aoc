@@ -13,7 +13,13 @@ print(root)
 
 def fetch_input(day, year):
     url = f"https://adventofcode.com/{year}/day/{day}/input"
-    return requests.get(url, headers={"Cookie": f"session={AOC_SESSION_TOKEN}"}).text
+    response = requests.get(
+        url,
+        headers={
+            "Cookie": f"session={AOC_SESSION_TOKEN}",
+        },
+    )
+    return response.text
 
 
 def get_project_root() -> pl.Path:
