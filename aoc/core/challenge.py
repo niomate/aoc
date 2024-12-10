@@ -8,7 +8,6 @@ AOC_SESSION_TOKEN = os.getenv("AOC_TOKEN")
 
 here = pl.Path(__file__).parent
 root = here.parents[1]
-print(root)
 
 
 def fetch_input(day, year):
@@ -57,7 +56,6 @@ def get_challenge_parameters(path=None):
     try:
         day = int(path.parents[0].name)
         year = int(path.parents[1].name)
-        print(day, year)
     except e:
-        print()
+        return None
     return day, year
